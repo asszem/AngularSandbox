@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Phone } from '../Phone';
+import { Phone } from '../phone'; // Make sure this is exactly the same as the filename, case-sensitive!
 
 @Component({
   selector: 'app-sandbox',
@@ -9,16 +9,27 @@ import { Phone } from '../Phone';
 export class SandboxComponent implements OnInit {
   private counter = 0; // let keyword is not allowed to be used inside a class
   private secretCounter: number;
+  sandboxPhone: Phone = new Phone();
   constructor() {
     console.log('Constructor called');
   }
 
   ngOnInit() {}
+
   // Name    return type
   greet(): string {
     console.log('Greet() method called: ' + this.counter++);
     const greetings = 'Hello World!';
     return greetings;
+  }
+
+  displayPhone(): string {
+    this.sandboxPhone.setPhoneType('Pixel2');
+    // this.sandboxPhone.phoneType = 'alma';
+    console.log(
+      'Phone type in displayPhone method set to ' + this.sandboxPhone.phoneType
+    );
+    return this.sandboxPhone.phoneType;
   }
 }
 // These statements are OUTSIDE of the SandboxComponent class... not like in Java, here this is possible
@@ -41,3 +52,8 @@ console.log(
     ' Phone number: ' +
     aPhoneObject.phoneNumber
 );
+
+function hello(thing) {
+  console.log(this + ' says hello ' + thing);
+}
+hello.call('alma', 'körte');
