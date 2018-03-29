@@ -10,5 +10,5 @@ if (environment.production) {
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .then(success => console.log('Bootsrtrap completed'))
+  .then(success => console.log('Angular main.ts bootstrap completed'))
   .catch(err => console.log(err));

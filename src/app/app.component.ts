@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { javascriptSandbox} from './javascript-sandbox.js';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular / TypeScript Sandbox';
 }
+
+// Call the function so it will be executed
+javascriptSandbox();

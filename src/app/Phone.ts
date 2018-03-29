@@ -4,10 +4,8 @@ export class Phone {
   phoneNumber: number;
 
   setPhoneType(phoneType: string) {
-    console.log('set phoneType called. String to set: ' + phoneType);
+    // console.log('set phoneType called. String to set: ' + phoneType);
     this.phoneType = phoneType;
-    console.log('Current phonetype: ' + this.phoneType);
+    // console.log('Current phonetype: ' + this.phoneType);
   }
 }
-
-console.log('Phone.ts outside message');
