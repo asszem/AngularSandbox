@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { javascriptSandbox} from './javascript-sandbox.js';
+import { javascriptCallback } from './javascript-callback.js';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,4 @@ export class AppComponent {
 }
 
 // Call the function so it will be executed
-javascriptSandbox();
+javascriptCallback();
