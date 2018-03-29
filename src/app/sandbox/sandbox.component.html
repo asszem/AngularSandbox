@@ -1,10 +1,34 @@
-<div *ngIf="aNumber">
-  <p> A number is: {{aNumber}} </p>
+<div ngNonBindable>
+  <h2>
+    <a href="https://angular.io/guide/template-syntax#interpolation----"> Property Interpolation {{..}}</a>
+  </h2>
 </div>
-<div *ngIf="greet()">
-  <p>Greeting: {{greet()}}</p>
+
+<div *ngIf="aNumber">
+  <p> Field value interplation:
+    <br/>A number is: {{aNumber}} </p>
 </div>
 <div *ngIf="sandboxPhone">
-  <p>Phone type: {{displayPhone()}}</p>
-  <p>Phone number: {{sandboxPhone.phoneNumber}}</p>
+  <p>Method return value interpolation:
+    <br/>Phone type: {{displayPhone()}}
+    <br/>Object field value interpolation:
+    <br/>Phone number: {{sandboxPhone.phoneNumber}}</p>
+  <p>Image interplation
+    <img src={{imageAddress}}>
+  </p>
 </div>
+
+
+<div ngNonBindable>
+  <h2>
+    <a href="https://angular.io/guide/template-syntax#property-binding--property-"> Property Binding [property]</a>
+  </h2>
+</div>
+<p>Important difference between
+  <a href="https://angular.io/guide/template-syntax#html-attribute-vs-dom-property">HTML attribute vs. DOM property</a>
+</p>
+<button [disabled]="setDisabled(true)">Cancel is disabled</button>
+<button [disabled]="setDisabled(false)">Cancel is enabled</button>
+<p>Image Property binding
+  <img [src]="imageAddress">
+</p>
