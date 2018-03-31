@@ -31,6 +31,9 @@ export class SandboxComponent implements OnInit {
     // );
     return this.sandboxPhone.phoneType;
   }
+  displayAlert(){
+    alert(this.displayPhone());
+  }
 
   setDisabled(status: boolean): boolean {
     if (status) {
