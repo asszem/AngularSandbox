@@ -8,20 +8,13 @@ export function javascriptCallback() { };
 // https://stackoverflow.com/questions/29933522/anonymous-callback-function-clarification
 // https://www.dashingd3js.com/lessons/javascript-callback-functions
 
-// This function will have a callback function
+// This is the original function which will have a callback function
 function callbackTester(callback) {
-  console.log('inside callbackTester ');
+  console.log('\tinside callbackTester, before callback');
   callback();
 }
 
-function callbackWithoutParameter() {
-  console.log('inside callbackWithoutParameter');
-}
-// This will be passed as the parameter when named function is used
-function callbackWithParameters(parameter1, parameter2) {
-  console.log('inside callbackWithParameters, parameter1: ' + parameter1 + ' parameter2: ' + parameter2);
-}
-
+// WITHOUT CALLBACK PARAMETER
 // Anonymous callback
 callbackTester(function(){console.log('inside anonymous callback')});
 
@@ -29,7 +22,18 @@ callbackTester(function(){console.log('inside anonymous callback')});
 callbackTester(function namedFunction(){console.log('inside namedFunction callback')});
 
 // As a reference to a function declaration
+// This function will be passed as the parameter to the callbackTester
+function callbackWithoutParameter() {
+  console.log('inside callbackWithoutParameter');
+}
 callbackTester(callbackWithoutParameter);
 
+// WITH CALLBACK PARAMETER
+// This function has two parameters
+function callbackWithParameters(parameter1, parameter2) {
+  console.log('inside callbackWithParameters, parameter1: ' + parameter1 + ' parameter2: ' + parameter2);
+}
 // Named and referenced callback with parameter
 callbackTester(function(){callbackWithParameters("argument1", "argument2")});
+// callbackTester(callbackWithParameteres); // this will not work
+// callbackTester(callbackWithParameters('alma', 'korte'));  // this will not work
